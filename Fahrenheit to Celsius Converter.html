@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fahrenheit to Celsius Converter</title>
+</head>
+<body style="background-color: red;">
+    <h1>Fahrenheit to Celsius Converter</h1>
+    <label for="fahrenheit">Fahrenheit:</label>
+    <input type="number" id="fahrenheit" onchange="convert()" step="0.01">
+    <br>
+    <label for="celsius">Celsius:</label>
+    <input type="text" id="celsius" readonly>
+    
+    <script>
+        function convert() {
+            const fahrenheitInput = document.getElementById("fahrenheit");
+            const celsiusInput = document.getElementById("celsius");
+
+            // Convert Fahrenheit to Celsius
+            const fahrenheitValue = parseFloat(fahrenheitInput.value);
+            const celsiusValue = (fahrenheitValue - 32) * (5/9);
+
+            // Update the Celsius input field with the result
+            celsiusInput.value = celsiusValue.toFixed(2);
+        }
+    </script>
+</body>
+</html>
